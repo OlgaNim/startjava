@@ -3,19 +3,20 @@ public class VariablesTheme {
     public static void main(String[] args) {
         System.out.println("1.Вывод характеристик компьютера");
         boolean current = true;
-            if (true) {
-                System.out.println("Модель компьютера: Hewlett-Packard");
+        if (true) {
+            System.out.println("Модель компьютера: Hewlett-Packard");
             }
         byte numberInName = 0; 
             System.out.println("Имя устройства: DESKTOP-K1T" + numberInName + "VRR");
-        short part1OfCPU = 3;
-        char part2OfCPU = '\u002D';
-        int part3OfCPU = 2310;
-            System.out.println("Процессор: Intel(R) Core(TM) i" + part1OfCPU + part2OfCPU + part3OfCPU + "M CPU");
-        float perfomanceCPU = 2.10F;
-            System.out.println("Мощность процессора:" + perfomanceCPU + " GHz");
-        long ProductCode =36;
-            System.out.println("Код продукта: 2BD6B48A-FF" + ProductCode + "-48D0-A4F5-53D0344F39D1");
+        short part1OfCpu = 3;
+        char part2OfCpu = '\u002D';
+        int part3OfCpu = 2310;
+            System.out.println("Процессор: Intel(R) Core(TM) i" + part1OfCpu + 
+        part2OfCpu + part3OfCpu + "M CPU");
+        float perfomanceCpu = 2.10F;
+            System.out.println("Мощность процессора:" + perfomanceCpu + " GHz");
+        long productCode =36;
+            System.out.println("Код продукта: 2BD6B48A-FF" + productCode + "-48D0-A4F5-53D0344F39D1");
         double memory = 6.0;
             System.out.println("Оперативная память: " + memory + " ГБ" + "\n");
 
@@ -39,82 +40,90 @@ public class VariablesTheme {
 
         System.out.println("4. Вывод min и max значений целых числовых типов byte, short, int, long");
         System.out.println("Вывод числового типа byte:");
-        byte maxByte = 127;
-        System.out.print(maxByte + ", ");
-        byte incremByte = ++maxByte;
-        System.out.print(incremByte + ", ");
-        byte decremByte = --maxByte;
-        decremByte = --maxByte;
-        System.out.println(decremByte + "\n");
+        byte byteNumber = 127;
+        System.out.println(byteNumber + ", " + ++byteNumber + ", " + --byteNumber);
+        System.out.println("Вывод числового типа short:");
+        short shortNumber = 32767;
+        System.out.println(shortNumber + ", " + ++shortNumber + ", " + --shortNumber);
+        System.out.println("Вывод числового типа int:");
+        int intNumber = 2147483647;
+        System.out.println(intNumber + ", " + ++intNumber + ", " + --intNumber);
+        System.out.println("Вывод числового типа long:");
+        long longNumber = 9223372036854775807L;
+        System.out.println(longNumber + ", " + ++longNumber + ", " + --longNumber + "\n");
 
         System.out.println("5. Перестановка значений переменных");
         int a = 2;
         int b = 5;
         System.out.println("Перестановка с помощью третьей переменной");
         System.out.println("Исходные значения: a = " + a + ", b = " + b);
-        int c = a;
+        int tmp = a;
         a = b;
-        b = c;
+        b = tmp;
         System.out.println("Новые значения: a = " + a + ", b = " + b + "\n");
 
         System.out.println("Перестановка с помощью арифметических операций");
         System.out.println("Исходные значения: a = " + a + ", b = " + b);
         // найдем разницу между числами
-        c = a - b;
-        a = a - c;
-        b = b + c;
+        tmp = a - b;
+        a -= tmp;
+        b += tmp;
         System.out.println("Новые значения: a = " + a + ", b = " + b + "\n");
 
         System.out.println("Перестановка с помощью побитовой операции");
         System.out.println("Исходные значения: a = " + a + ", b = " + b);
-        a = b ^ a;
-        b = b ^ a;
-        a = a ^ b;
+        a ^= b;
+        b ^= a;
+        a ^= b;
         System.out.println("Новые значения: a = " + a + ", b = " + b + "\n");
 
         System.out.println("6. Вывод символов и их кодов");
-        char ch36 = 36;
-        char ch42 = 42;
-        char ch64 = 64;
-        char ch124 = 124;
-        char ch126 = 126;
-        System.out.println("36 " + ch36 + "\n" +"42 " + ch42 + "\n"+"64 " + ch64 + "\n"+"124 " + ch124 + "\n"+"126 " + ch126 + "\n");
+        char dollar = '$';
+        int dollarNum = dollar;
+        char aster = '*';
+        int asterNum = aster;
+        char doggy = '@';
+        int doggyNum = doggy;
+        char verticalBar = '|';
+        int verticalBarNum = verticalBar;
+        char tilde = '~';
+        int tildeNum = tilde;
+        System.out.println(dollarNum + " - " + dollar + "\n" + asterNum + " - " + aster + "\n"
+        + doggyNum + " - " + doggy + "\n" + verticalBarNum + " - " + verticalBar + "\n"
+        + tildeNum + " - "+ tilde + "\n");
 
         System.out.println("7. Вывод в консоль ASCII-арт Дюка");
-        char ch1 = 47;
-        char ch2 = 92;
-        // нижнее подчеркивание
-        char ch3 = 95;
-        // левая скобка
-        char ch4 = 40;
-        // правая скобка
-        char ch5 = 41;
-        System.out.println("    " + ch1 + ch2 + "        ");
-        System.out.println("   " + ch1 + "  " + ch2 + "     ");
-        System.out.println("  " + ch1 + ch3 + ch4 + " " + ch5 + ch2 +"     ");
-        System.out.println(" " + ch1 + "      " + ch2 + "     ");
-        System.out.println("" + ch1 + ch3 + ch3 + ch3 + ch3 + ch1 + ch2 + ch3 + ch3 + ch2 + "\n");
+        char slash = '/';
+        char backslash = '\\';
+        char undersc = '_';
+        char leftPar = '(';
+        char rightPar = ')';
+        System.out.println("    " + slash + backslash);
+        System.out.println("   " + slash + "  " + backslash);
+        System.out.println("  " + slash + undersc + leftPar + " " + rightPar + backslash);
+        System.out.println(" " + slash + "      " + backslash);
+        System.out.println("" + slash + undersc + undersc + undersc + undersc + slash 
+        + backslash + undersc + undersc + backslash + "\n");
 
         System.out.println("8. Вывод количества сотен, десятков и единиц числа");
-        int n = 123;
-        System.out.println("Число " + n + " содержит:");
-        int z = n % 10;
-        int y = n / 10 % 10;
-        int x = n / 100;
-        int s = x + y + z;
-        int p = x * y * z;
-        System.out.println("  сотен - " + x + "\n" + "  десятков - " + y + "\n" + "  единиц - " + z);
-        System.out.println("Сумма его цифр = " +  s);
-        System.out.println("Произведение = " + p + "\n");
+        int firstNumber = 123;
+        System.out.println("Число " + firstNumber + " содержит:");
+        int unit = firstNumber % 10;
+        int decade = firstNumber / 10 % 10;
+        int hundred = firstNumber / 100;
+        int sum = hundred + decade + unit;
+        int multiplication = hundred * decade * unit;
+        System.out.println("  сотен - " + hundred + "\n" + "  десятков - " + decade + "\n" 
+        + "  единиц - " + unit);
+        System.out.println("Сумма его цифр = " +  sum);
+        System.out.println("Произведение = " + multiplication + "\n");
 
         System.out.println("9. Вывод времени");
-        int sec = 86399;
-        int minutes = sec / 60;
-        int hours = minutes / 60;
-        int secRem = sec - (hours * 60 * 60);
-        int minRem = secRem / 60;
-        int secRemRem = secRem - (minRem * 60);
-        System.out.println(hours + ":" + minRem + ":" + secRemRem);
+        int secBase = 86399;
+        int hours = secBase / 60 / 60;
+        int min = secBase / 60 % 60;
+        int sec = secBase / 1 % 60;
+        System.out.println(hours + ":" + min + ":" + sec);
 
     }
 }
